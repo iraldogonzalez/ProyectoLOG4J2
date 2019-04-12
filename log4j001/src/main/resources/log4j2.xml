@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="OFF">
+	<Properties>
+		<property name="direccionArchivo">/home/iraldo.gonzalez/eclipse-workspace/log4j001/logs/</property>
+		<property name="patronArchivo">-%d{MM-dd-yyyy}-%i</property>
+	</Properties>
+	<appenders>
+		
+		
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout>
+				<pattern>${log-pattern}</pattern>
+			</PatternLayout>
+		</Console>
+
+	<RollingFile name="LoggerServicioRolling" fileName="/home/iraldo.gonzalez/eclipse-workspace/log4j001/logs/ServicioLog.csv" filePattern="/home/iraldo.gonzalez/eclipse-workspace/log4j001/logs/ServicioLog-%d{MM-dd-yyyy}-%i.csv.zip">
+		<CsvParameterLayout delimiter="/" header="------------------\n" />
+		<Policies>
+                <TimeBasedTriggeringPolicy interval="1"
+                    modulate="true" />
+                <SizeBasedTriggeringPolicy size="10 MB" />
+        </Policies>
+        <DefaultRolloverStrategy max="200" />
+	</RollingFile>
+	
+	
+	<RollingFile name="LoggerAppRolling" fileName="/home/iraldo.gonzalez/eclipse-workspace/log4j001/logs/AppLog.csv" filePattern="/home/iraldo.gonzalez/eclipse-workspace/log4j001/logs/AppLog-%d{MM-dd-yyyy}-%i.csv.zip">
+		<CsvParameterLayout delimiter="/" header="------------------\n" />
+		<Policies>
+                <TimeBasedTriggeringPolicy interval="1"
+                    modulate="true" />
+                <SizeBasedTriggeringPolicy size="10 MB" />
+        </Policies>
+        <DefaultRolloverStrategy max="200" />
+	</RollingFile>
+	
+	
+	<RollingFile name="LoggerPruebaRolling" fileName="${direccionArchivo}PruebaLog.csv" filePattern="${direccionArchivo}PruebaLog${patronArchivo}.csv.gz">
+		<CsvParameterLayout delimiter="/" header="------------------\n" />
+		<Policies>
+                <TimeBasedTriggeringPolicy interval="1"
+                    modulate="true" />
+                <SizeBasedTriggeringPolicy size="10 MB" />
+        </Policies>
+        <DefaultRolloverStrategy max="200" />
+	</RollingFile>
+	
+		
+		
+		
+	</appenders>
+	<Loggers>
+		<logger name="LoggerApp" level="info" additivity="false">
+			<AppenderRef ref="LoggerAppRolling" level="info" />
+		</logger>
+		<logger name="LoggerServicio" level="info" additivity="false">
+			<AppenderRef ref="LoggerServicioRolling" level="info" />
+		</logger>
+		<logger name="LoggerPrueba" level="info" additivity="false">
+			<AppenderRef ref="LoggerPruebaRolling" level="info" />
+		</logger>
+		
+		
+		
+		
+		
+	</Loggers>
+	
+</configuration>

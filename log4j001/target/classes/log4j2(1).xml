@@ -1,0 +1,19 @@
+<Configuration status="warn">
+  <Appenders>
+    <File name="MyFile" fileName="csvLog.csv">
+      <PatternLayout pattern="%d %p %c{1.} [%t] %m%n" />
+    </File>
+	<File name="OtherFile" fileName="otherLog.csv">
+      <PatternLayout pattern="%d %p %c{1.} [%t] %m%n" />
+    </File>
+  </Appenders>
+  <Loggers>
+
+    <Logger name="com.other.company" additivity="false">
+      <AppenderRef ref="OtherFile"/>
+    </Logger>
+    <Root level="trace">
+      <AppenderRef ref="MyFile"/>
+    </Root>
+  </Loggers>
+</Configuration>

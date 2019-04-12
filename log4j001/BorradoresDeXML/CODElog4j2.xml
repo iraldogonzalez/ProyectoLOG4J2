@@ -1,0 +1,728 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration>
+	<Properties>
+		<Property name="pattern">%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5p] [%T] [%c{-3}] %m%n</Property>
+		<Property name="mybatis.pattern">%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5p] [%T] [Mybatis] %m%n</Property>
+	</Properties>
+
+	<Appenders>
+		<!-- Salida estándar -->
+		<RollingFile name="STDOUT" fileName="/opt/mule/logs/services.camper.com/v1/stdout.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/stdout-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- Salida estándar de sentencias de Mybatis -->
+		<RollingFile name="MYBATIS" fileName="/opt/mule/logs/services.camper.com/v1/mybatis.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/mybatis-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${mybatis.pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- accordanceCleanSignatures -->
+		<RollingFile name="ACCORDANCE_CLEAN_SIGNATURES" fileName="/opt/mule/logs/services.camper.com/v1/accordance/clean-signatures.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/accordance/clean-signatures-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- adyenReports -->
+		<RollingFile name="ADYEN_REPORTS" fileName="/opt/mule/logs/services.camper.com/v1/adyen/reports.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/adyen/reports-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- api/v1.0/mifitto -->
+		<RollingFile name="API_MIFITTO" fileName="/opt/mule/logs/services.camper.com/v1/mifitto.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/mifitto-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- api/eshop/monitor/checkStatus -->
+		<RollingFile name="API_ESHOP_MONITOR_CHECK_STATUS" fileName="/opt/mule/logs/services.camper.com/v1/api/eshop/monitor/check-status.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/api/eshop/monitor/check-status-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- api/eshop/monitor/checkStatusDB -->
+		<RollingFile name="API_ESHOP_MONITOR_CHECK_STATUS_DB" fileName="/opt/mule/logs/services.camper.com/v1/api/eshop/monitor/check-status-db.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/api/eshop/monitor/check-status-db-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- api/eshop/monitor/checkStatusToken -->
+		<RollingFile name="API_ESHOP_MONITOR_CHECK_STATUS_TOKEN" fileName="/opt/mule/logs/services.camper.com/v1/api/eshop/monitor/check-status-token.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/api/eshop/monitor/check-status-token-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- api/eshop/monitor/checkStatusMailMule -->
+		<RollingFile name="API_ESHOP_MONITOR_CHECK_STATUS_MAIL_MULE" fileName="/opt/mule/logs/services.camper.com/v1/api/eshop/monitor/check-status-mail-mule.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/api/eshop/monitor/check-status-mail-mule-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- api/eshop/monitor/checkStatusMailJava -->
+		<RollingFile name="API_ESHOP_MONITOR_CHECK_STATUS_MAIL_JAVA" fileName="/opt/mule/logs/services.camper.com/v1/api/eshop/monitor/check-status-mail-java.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/api/eshop/monitor/check-status-mail-java-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- api/eshop/global/getRegions -->
+		<RollingFile name="API_ESHOP_GLOBAL_GET_REGIONS" fileName="/opt/mule/logs/services.camper.com/v1/api/eshop/global/get-regions.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/api/eshop/global/get-regions-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- api/eshop/global/searchEan -->
+		<RollingFile name="API_ESHOP_GLOBAL_SEARCH_EAN" fileName="/opt/mule/logs/services.camper.com/v1/api/eshop/global/search-ean.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/api/eshop/global/search-ean-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- api/eshop/global/search -->
+		<RollingFile name="API_ESHOP_GLOBAL_SEARCH" fileName="/opt/mule/logs/services.camper.com/v1/api/eshop/global/search.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/api/eshop/global/search-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- api/eshop/global/getPrices -->
+		<RollingFile name="API_ESHOP_GLOBAL_GET_PRICES" fileName="/opt/mule/logs/services.camper.com/v1/api/eshop/global/get-prices.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/api/eshop/global/get-prices-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- api/eshop/account/login -->
+		<RollingFile name="API_ESHOP_ACCOUNT_LOGIN" fileName="/opt/mule/logs/services.camper.com/v1/api/eshop/account/login.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/api/eshop/account/login-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- api/eshop/account/welcome -->
+		<RollingFile name="API_ESHOP_ACCOUNT_WELCOME" fileName="/opt/mule/logs/services.camper.com/v1/api/eshop/account/welcome.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/api/eshop/account/welcome-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- api/eshop/account/getOrders -->
+		<RollingFile name="API_ESHOP_ACCOUNT_GET_ORDERS" fileName="/opt/mule/logs/services.camper.com/v1/api/eshop/account/get-orders.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/api/eshop/account/get-orders-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- api/eshop/account/register -->
+		<RollingFile name="API_ESHOP_ACCOUNT_REGISTER" fileName="/opt/mule/logs/services.camper.com/v1/api/eshop/account/register.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/api/eshop/account/register-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- api/eshop/account/recovery -->
+		<RollingFile name="API_ESHOP_ACCOUNT_RECOVERY" fileName="/opt/mule/logs/services.camper.com/v1/api/eshop/account/recovery.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/api/eshop/account/recovery-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- api/eshop/account/updateProfile -->
+		<RollingFile name="API_ESHOP_ACCOUNT_UPDATE_PROFILE" fileName="/opt/mule/logs/services.camper.com/v1/api/eshop/account/update-profile.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/api/eshop/account/update-profile-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- api/eshop/account/updatePassword -->
+		<RollingFile name="API_ESHOP_ACCOUNT_UPDATE_PASSWORD" fileName="/opt/mule/logs/services.camper.com/v1/api/eshop/account/update-password.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/api/eshop/account/update-password-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- api/eshop/account/updateAddress -->
+		<RollingFile name="API_ESHOP_ACCOUNT_UPDATE_ADDRESS" fileName="/opt/mule/logs/services.camper.com/v1/api/eshop/account/update-address.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/api/eshop/account/update-address-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- api/eshop/account/addWishlist -->
+		<RollingFile name="API_ESHOP_ACCOUNT_ADD_WISHLIST" fileName="/opt/mule/logs/services.camper.com/v1/api/eshop/account/add-wishlist.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/api/eshop/account/add-wishlist-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- api/eshop/account/removeWishlist -->
+		<RollingFile name="API_ESHOP_ACCOUNT_REMOVE_WISHLIST" fileName="/opt/mule/logs/services.camper.com/v1/api/eshop/account/remove-wishlist.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/api/eshop/account/remove-wishlist-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- api/eshop/camperone/getModels -->
+		<RollingFile name="API_ESHOP_CAMPERONE_GET_MODELS" fileName="/opt/mule/logs/services.camper.com/v1/api/eshop/camperone/get-models.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/api/eshop/camperone/get-models-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- api/eshop/camperone/getInspiration -->
+		<RollingFile name="API_ESHOP_CAMPERONE_GET_INSPIRATION" fileName="/opt/mule/logs/services.camper.com/v1/api/eshop/camperone/get-inspiration.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/api/eshop/camperone/get-inspiration-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- api/eshop/camperone/createInspiration -->
+		<RollingFile name="API_ESHOP_CAMPERONE_CREATE_INSPIRATION" fileName="/opt/mule/logs/services.camper.com/v1/api/eshop/camperone/create-inspiration.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/api/eshop/camperone/create-inspiration-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- api/accordance/check-email -->
+		<RollingFile name="API_ACCORDANCE_CHECK_EMAIL" fileName="/opt/mule/logs/services.camper.com/v1/api/accordance/check-email.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/api/accordance/check-email-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- api/accordance/post-contact -->
+		<RollingFile name="API_ACCORDANCE_POST_CONTACT" fileName="/opt/mule/logs/services.camper.com/v1/api/accordance/post-contact.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/api/accordance/post-contact-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- api/accordance/insert-pending-signature -->
+		<RollingFile name="API_ACCORDANCE_INSERT_PENDING_SIGNATURE" fileName="/opt/mule/logs/services.camper.com/v1/api/accordance/insert-pending-signature.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/api/accordance/insert-pending-signature-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- api/accordance/get-pending-signatures -->
+		<RollingFile name="API_ACCORDANCE_GET_PENDING_SIGNATURES" fileName="/opt/mule/logs/services.camper.com/v1/api/accordance/get-pending-signatures.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/api/accordance/get-pending-signatures-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- api/accordance/get-post-contact -->
+		<RollingFile name="API_ACCORDANCE_GET_POST_CONTACT" fileName="/opt/mule/logs/services.camper.com/v1/api/accordance/get-post-contact.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/api/accordance/get-post-contact-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- client-detail -->
+		<RollingFile name="DETALLE_CLIENTE" fileName="/opt/mule/logs/services.camper.com/v1/client-detail.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/client-detail-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- nostro / sat -->
+		<RollingFile name="NOSTRO" fileName="/opt/mule/logs/services.camper.com/v1/sat.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/sat-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- payments/adyen/notification -->
+		<RollingFile name="PAYMENTS_ADYEN_NOTIF" fileName="/opt/mule/logs/services.camper.com/v1/payments/adyen/notification.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/payments/adyen/notification-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- trustev -->
+		<RollingFile name="TRUSTEV_ADD_STATUS" fileName="/opt/mule/logs/services.camper.com/v1/trustev/add-status.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/trustev/add-status-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- ws/logistica -->
+		<RollingFile name="WS_LOGISTICA" fileName="/opt/mule/logs/services.camper.com/v1/ws/logistica/logistica.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/ws/logistica/logistica-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+
+		<!-- ws/logistica_eod -->
+		<RollingFile name="WS_LOGISTICA_EOD" fileName="/opt/mule/logs/services.camper.com/v1/ws/logistica-eod/logistica-eod.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/ws/logistica-eod/logistica-eod-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+		
+		<!-- Logistica - AmazonFulfillment Requests -->
+		<RollingFile name="LOGISTICA_AMAZONFULFILLMENT_REQUESTS" fileName="/opt/mule/logs/services.camper.com/v1/ws/logistica/amazon/mws/fulfillment-requests.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/ws/logistica/amazon/mws/fulfillment-requests-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+		
+		<!-- StockOffline -->
+		<RollingFile name="STOCKOFFLINE" fileName="/opt/mule/logs/services.camper.com/v1/stockoffline.log"
+			filePattern="/opt/mule/logs/services.camper.com/v1/$${date:yyyy-MM}/stockoffline-%d{yyyy-MM-dd}-%i.log.gz">
+				<PatternLayout>
+					<Pattern>${pattern}</Pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy />
+					<SizeBasedTriggeringPolicy size="10 MB"/>
+				</Policies>
+		</RollingFile>
+		
+	</Appenders>
+
+
+	<Loggers>
+		<!-- Http Logger shows wire traffic on DEBUG -->
+		<AsyncLogger name="org.mule.module.http.internal.HttpMessageLogger" level="WARN"/>
+
+		<!-- JDBC Logger shows queries and parameters values on DEBUG -->
+		<AsyncLogger name="com.mulesoft.mule.transport.jdbc" level="WARN"/>
+
+		<!-- CXF is used heavily by Mule for web services -->
+		<AsyncLogger name="org.apache.cxf" level="WARN"/>
+
+		<!-- Apache Commons tend to make a lot of noise which can clutter the log-->
+		<AsyncLogger name="org.apache" level="WARN"/>
+
+		<!-- Reduce startup noise -->
+		<AsyncLogger name="org.springframework.beans.factory" level="WARN"/>
+
+		<!-- Mule classes -->
+		<AsyncLogger name="org.mule" level="INFO"/>
+		<AsyncLogger name="com.mulesoft" level="INFO"/>
+
+		<!-- Reduce DM verbosity -->
+		<AsyncLogger name="org.jetel" level="WARN"/>
+		<AsyncLogger name="Tracking" level="WARN"/>
+
+		<!-- Log de Mybatis -->
+		<Logger name="com.easydevel.api.eshop.db.esb.mapper" level="DEBUG" additivity="false">
+			<AppenderRef ref="MYBATIS" />
+		</Logger>
+		<Logger name="com.easydevel.api.eshop.db.esb.mapper.DefaultMapper" level="INFO">
+		</Logger>
+		<Logger name="com.easydevel.api.eshop.db.eshop.mapper" level="DEBUG" additivity="false">
+			<AppenderRef ref="MYBATIS" />
+		</Logger>
+		<Logger name="com.easydevel.api.eshop.db.eshop.mapper.DefaultMapper" level="INFO">
+		</Logger>
+		<Logger name="com.easydevel.api.eshop.db.sugar.mapper" level="DEBUG" additivity="false">
+			<AppenderRef ref="MYBATIS" />
+		</Logger>
+		<Logger name="com.easydevel.api.eshop.db.sugar.mapper.DefaultMapper" level="INFO">
+		</Logger>
+
+		<!-- accordanceCleanSignatures -->
+		<Logger name="com.easydevel.flows.AccordanceCleanSignaturesFlow" level="INFO" additivity="false">
+			<AppenderRef ref="ACCORDANCE_CLEAN_SIGNATURES" />
+		</Logger>
+
+		<!-- adyenReports -->
+		<Logger name="com.easydevel.flows.AdyenReportFlow" level="INFO" additivity="false">
+			<AppenderRef ref="ADYEN_REPORTS" />
+		</Logger>
+
+		<!-- api/v1.0/mifitto -->
+		<Logger name="com.easydevel.flows.ApiFlow.mifitto" level="INFO" additivity="false">
+			<AppenderRef ref="API_MIFITTO" />
+		</Logger>
+
+		<!-- api/eshop/monitor/checkStatus -->
+		<Logger name="com.easydevel.api.eshop.flow.rest.monitor.CheckStatusFlow" level="INFO" additivity="false">
+			<AppenderRef ref="API_ESHOP_MONITOR_CHECK_STATUS" />
+		</Logger>
+
+		<!-- api/eshop/monitor/checkStatusDB -->
+		<Logger name="com.easydevel.api.eshop.flow.rest.monitor.CheckStatusDBFlow" level="INFO" additivity="false">
+			<AppenderRef ref="API_ESHOP_MONITOR_CHECK_STATUS_DB" />
+		</Logger>
+
+		<!-- api/eshop/monitor/checkStatusToken -->
+		<Logger name="com.easydevel.api.eshop.flow.rest.monitor.CheckStatusTokenFlow" level="INFO" additivity="false">
+			<AppenderRef ref="API_ESHOP_MONITOR_CHECK_STATUS_TOKEN" />
+		</Logger>
+
+		<!-- api/eshop/monitor/checkStatusMailMule -->
+		<Logger name="com.easydevel.api.eshop.flow.rest.monitor.CheckStatusMailMuleFlow" level="INFO" additivity="false">
+			<AppenderRef ref="API_ESHOP_MONITOR_CHECK_STATUS_MAIL_MULE" />
+		</Logger>
+
+		<!-- api/eshop/monitor/checkStatusMailJava -->
+		<Logger name="com.easydevel.api.eshop.flow.rest.monitor.CheckStatusMailJavaFlow" level="INFO" additivity="false">
+			<AppenderRef ref="API_ESHOP_MONITOR_CHECK_STATUS_MAIL_JAVA" />
+		</Logger>
+
+		<!-- api/eshop/global/getRegions -->
+		<Logger name="com.easydevel.api.eshop.flow.rest.global.GetRegionsFlow" level="INFO" additivity="false">
+			<AppenderRef ref="API_ESHOP_GLOBAL_GET_REGIONS" />
+		</Logger>
+
+		<!-- api/eshop/global/searchEan -->
+		<Logger name="com.easydevel.api.eshop.flow.rest.global.SearchEanFlow" level="INFO" additivity="false">
+			<AppenderRef ref="API_ESHOP_GLOBAL_SEARCH_EAN" />
+		</Logger>
+
+		<!-- api/eshop/global/search -->
+		<Logger name="com.easydevel.api.eshop.flow.rest.global.SearchFlow" level="INFO" additivity="false">
+			<AppenderRef ref="API_ESHOP_GLOBAL_SEARCH" />
+		</Logger>
+
+		<!-- api/eshop/global/getPrices -->
+		<Logger name="com.easydevel.api.eshop.flow.rest.global.GetPricesFlow" level="INFO" additivity="false">
+			<AppenderRef ref="API_ESHOP_GLOBAL_GET_PRICES" />
+		</Logger>
+
+		<!-- api/eshop/account/login -->
+		<Logger name="com.easydevel.api.eshop.flow.rest.account.LoginFlow" level="INFO" additivity="false">
+			<AppenderRef ref="API_ESHOP_ACCOUNT_LOGIN" />
+		</Logger>
+
+		<!-- api/eshop/account/welcome -->
+		<Logger name="com.easydevel.api.eshop.flow.rest.account.WelcomeFlow" level="INFO" additivity="false">
+			<AppenderRef ref="API_ESHOP_ACCOUNT_WELCOME" />
+		</Logger>
+
+		<!-- api/eshop/account/getOrders -->
+		<Logger name="com.easydevel.api.eshop.flow.rest.account.GetOrdersFlow" level="INFO" additivity="false">
+			<AppenderRef ref="API_ESHOP_ACCOUNT_GET_ORDERS" />
+		</Logger>
+
+		<!-- api/eshop/account/register -->
+		<Logger name="com.easydevel.api.eshop.flow.rest.account.RegisterFlow" level="INFO" additivity="false">
+			<AppenderRef ref="API_ESHOP_ACCOUNT_REGISTER" />
+		</Logger>
+
+		<!-- api/eshop/account/recovery -->
+		<Logger name="com.easydevel.api.eshop.flow.rest.account.RecoveryFlow" level="INFO" additivity="false">
+			<AppenderRef ref="API_ESHOP_ACCOUNT_RECOVERY" />
+		</Logger>
+
+		<!-- api/eshop/account/updateProfile -->
+		<Logger name="com.easydevel.api.eshop.flow.rest.account.UpdateProfileFlow" level="INFO" additivity="false">
+			<AppenderRef ref="API_ESHOP_ACCOUNT_UPDATE_PROFILE" />
+		</Logger>
+
+		<!-- api/eshop/account/updatePassword -->
+		<Logger name="com.easydevel.api.eshop.flow.rest.account.UpdatePasswordFlow" level="INFO" additivity="false">
+			<AppenderRef ref="API_ESHOP_ACCOUNT_UPDATE_PASSWORD" />
+		</Logger>
+
+		<!-- api/eshop/account/updateAddress -->
+		<Logger name="com.easydevel.api.eshop.flow.rest.account.UpdateAddressFlow" level="INFO" additivity="false">
+			<AppenderRef ref="API_ESHOP_ACCOUNT_UPDATE_ADDRESS" />
+		</Logger>
+
+		<!-- api/eshop/account/addWishlist -->
+		<Logger name="com.easydevel.api.eshop.flow.rest.account.AddWishlistFlow" level="INFO" additivity="false">
+			<AppenderRef ref="API_ESHOP_ACCOUNT_ADD_WISHLIST" />
+		</Logger>
+
+		<!-- api/eshop/account/removeWishlist -->
+		<Logger name="com.easydevel.api.eshop.flow.rest.account.RemoveWishlistFlow" level="INFO" additivity="false">
+			<AppenderRef ref="API_ESHOP_ACCOUNT_REMOVE_WISHLIST" />
+		</Logger>
+
+		<!-- api/eshop/camperone/getModels -->
+		<Logger name="com.easydevel.api.eshop.flow.rest.camperone.GetModelsFlow" level="INFO" additivity="false">
+			<AppenderRef ref="API_ESHOP_CAMPERONE_GET_MODELS" />
+		</Logger>
+
+		<!-- api/eshop/camperone/getInspiration -->
+		<Logger name="com.easydevel.api.eshop.flow.rest.camperone.GetInspirationFlow" level="INFO" additivity="false">
+			<AppenderRef ref="API_ESHOP_CAMPERONE_GET_INSPIRATION" />
+		</Logger>
+
+		<!-- api/eshop/camperone/createInspiration -->
+		<Logger name="com.easydevel.api.eshop.flow.rest.camperone.CreateInspirationFlow" level="INFO" additivity="false">
+			<AppenderRef ref="API_ESHOP_CAMPERONE_CREATE_INSPIRATION" />
+		</Logger>
+
+		<!-- api/accordance/check-email -->
+		<Logger name="com.easydevel.api.accordance.flow.rest.CheckEmailFlow" level="INFO" additivity="false">
+			<AppenderRef ref="API_ACCORDANCE_CHECK_EMAIL" />
+		</Logger>
+
+		<!-- api/accordance/post-contact -->
+		<Logger name="com.easydevel.api.accordance.flow.PostContactFlow" level="INFO" additivity="false">
+			<AppenderRef ref="API_ACCORDANCE_POST_CONTACT" />
+		</Logger>
+
+		<!-- api/accordance/insert-pending-signature -->
+		<Logger name="com.easydevel.api.accordance.flow.rest.InsertPendingSignatureFlow" level="INFO" additivity="false">
+			<AppenderRef ref="API_ACCORDANCE_INSERT_PENDING_SIGNATURE" />
+		</Logger>
+
+		<!-- api/accordance/get-pending-signatures -->
+		<Logger name="com.easydevel.api.accordance.flow.rest.GetPendingSignaturesFlow" level="INFO" additivity="false">
+			<AppenderRef ref="API_ACCORDANCE_GET_PENDING_SIGNATURES" />
+		</Logger>
+
+		<!-- api/accordance/get-post-contact -->
+		<Logger name="com.easydevel.api.accordance.flow.rest.GetPostContactFlow" level="INFO" additivity="false">
+			<AppenderRef ref="API_ACCORDANCE_GET_POST_CONTACT" />
+		</Logger>
+
+		<!-- client-detail -->
+		<Logger name="com.easydevel.flows.DetalleClienteFlow" level="INFO" additivity="false">
+			<AppenderRef ref="DETALLE_CLIENTE" />
+		</Logger>
+
+		<!-- nostro / sat -->
+		<Logger name="com.easydevel.flows.NostroFlow" level="INFO" additivity="false">
+			<AppenderRef ref="NOSTRO" />
+		</Logger>
+
+		<!-- payments/adyen/notification -->
+		<Logger name="com.easydevel.payments.adyen.flow.AdyenNotificationFlow" level="INFO" additivity="false">
+			<AppenderRef ref="PAYMENTS_ADYEN_NOTIF" />
+		</Logger>
+
+		<!-- trustev -->
+		<Logger name="com.easydevel.flows.TrustEvFlow" level="INFO" additivity="false">
+			<AppenderRef ref="TRUSTEV_ADD_STATUS" />
+		</Logger>
+
+		<!-- ws/logistica -->
+		<Logger name="com.easydevel.ws.camper.impl.Logistica" level="INFO" additivity="false">
+			<AppenderRef ref="WS_LOGISTICA" />
+		</Logger>
+
+		<!-- ws/logistica_eod -->
+		<Logger name="com.easydevel.ws.camper.impl.LogisticaEOD" level="INFO" additivity="false">
+			<AppenderRef ref="WS_LOGISTICA_EOD" />
+		</Logger>
+
+		<!-- Logistica - AmazonFulfillment Requests -->
+		<Logger name="com.easydevel.ws.camper.logistica.amazon.mws.requests" level="INFO" additivity="false">
+			<AppenderRef ref="LOGISTICA_AMAZONFULFILLMENT_REQUESTS" />
+		</Logger>
+
+		<!-- StockOffline -->
+		<Logger name="com.easydevel.sapconnection.StockOfflineFlow" level="INFO" additivity="false">
+			<AppenderRef ref="STOCKOFFLINE" />
+		</Logger>
+
+		<!-- Log estándar -->
+		<Root level="INFO">
+			<AppenderRef ref="STDOUT" />
+		</Root>
+	</Loggers>
+</Configuration>
